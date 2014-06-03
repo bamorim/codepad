@@ -6,7 +6,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'angular-blocks',
-    'ui.ace'
+    'ui.ace',
+    'textAngular'
   ])
   .config(function ($routeProvider) {
     $routeProvider

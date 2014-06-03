@@ -4,12 +4,15 @@
     <h2>{{pad.title}}</h2>
 
     <div ng-repeat="block in pad.blocks">
+      <button ng-click="removeBlock($index)">X</button>
       <div ng-switch="block.type">
-        <div ng-bind-html="block.content" ng-switch-when="text"></div>
-        <div ui-ace="{onLoad: aceLoaded(block)}" ng-model="block.content" ng-switch-default></div>
+        <div text-angular ng-switch-when="text" ta-toolbar="[['bold', 'italics', 'underline'],['justifyLeft', 'justifyCenter','justifyRight'],['insertImage','insertLink', 'insertVideo']]" ng-model="block.content"></div>
+        <code-block ng-switch-default block="block" on-evaluate="evaluate" supported-languages="supportedLanguages"></code-block>
       </div>
     </div>
 
-    <h2>lalal</h2>
+    <select ng-model="newBlockType" ng-options="lang for lang in supportedLanguages.concat(['text'])"></select> 
+    <button ng-click="addBlock(newBlockType)">Adicionar Bloco</button>
+    <button ng-click="pad.$save()">Save</button>
   </div>
 </div>

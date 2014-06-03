@@ -14,6 +14,7 @@ module.exports = function(config) {
       'app/bower_components/angular-sanitize/angular-sanitize.js',
       'app/bower_components/angular-blocks/dist/angular-blocks.js',
       'app/bower_components/angular-ui-ace/ui-ace.js',
+      'app/bower_components/textAngular/dist/textAngular.min.js',
       'app/scripts/**/*.js',
       'test/spec/**/*.js'
     ],
