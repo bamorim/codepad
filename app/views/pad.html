@@ -1,0 +1,15 @@
+<div data-extend-template="/layouts/main.html">
+  <div data-block="content">
+
+    <h2>{{pad.title}}</h2>
+
+    <div ng-repeat="block in pad.blocks">
+      <div ng-switch="block.type">
+        <div ng-bind-html="block.content" ng-switch-when="text"></div>
+        <div ui-ace="{onLoad: aceLoaded(block)}" ng-model="block.content" ng-switch-default></div>
+      </div>
+    </div>
+
+    <h2>lalal</h2>
+  </div>
+</div>
