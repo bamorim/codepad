@@ -3,5 +3,8 @@
     <p ng-repeat="pad in pads">
     <a ng-href="#/pads/{{pad.id}}">{{pad.title}}</a>
     </p>
+
+    <input ng-model="newPadTitle" type="text"/>
+    <button ng-click="createPad(newPadTitle)">Criar Novo</button>
   </div>
 </div>

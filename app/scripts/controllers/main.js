@@ -5,4 +5,11 @@ angular.module('codePadApp')
     Pad.query(function(data){
       $scope.pads = data;
     });
+
+    $scope.createPad = function(padTitle){
+      var pad = new Pad({title: padTitle});
+      pad.$save(function(p, headers){
+        $location.path("#/pads/"+p.id);
+      });
+    };
   });

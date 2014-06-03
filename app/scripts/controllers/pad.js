@@ -5,7 +5,7 @@ angular.module('codePadApp')
     Pad.get({id: $routeParams.id}, function(pad){
       $scope.pad = pad;
 
-      $scope.supportedLanguages = ["javascript","ruby","clojure","haskell"]
+      $scope.supportedLanguages = ["javascript","ruby"]
 
       $scope.removeBlock = function(index){
         $scope.pad.blocks.splice(index,1);
