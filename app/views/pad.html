@@ -7,7 +7,7 @@
         <div ng-repeat="block in pad.blocks" class="block">
           <i class="fa fa-times-circle-o removeBlock" ng-click="removeBlock($index)"></i>
           <div ng-switch="block.type">
-            <div text-angular ng-switch-when="text" ta-toolbar="[['bold', 'italics', 'underline'],['justifyLeft', 'justifyCenter','justifyRight'],['insertImage','insertLink', 'insertVideo']]" ng-model="block.content"></div>
+            <div medium-editor ng-switch-when="text" ng-model="block.content"></div>
             <code-block ng-switch-default block="block" on-evaluate="evaluate" supported-languages="supportedLanguages"></code-block>
           </div>
         </div>

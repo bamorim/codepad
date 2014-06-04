@@ -12,8 +12,8 @@
     "angular-blocks": "~0.1.9",
     "angular-sanitize": "~1.2.16",
     "angular-ui-ace": "bower",
-    "textAngular": "~1.2.1",
-    "font-awesome": "~4.1.0"
+    "font-awesome": "~4.1.0",
+    "angular-medium-editor": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.15",
