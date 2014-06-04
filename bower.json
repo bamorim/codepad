@@ -13,7 +13,8 @@
     "angular-sanitize": "~1.2.16",
     "angular-ui-ace": "bower",
     "font-awesome": "~4.1.0",
-    "angular-medium-editor": "*"
+    "angular-medium-editor": "*",
+    "angular-busy": "~4.0.4"
   },
   "devDependencies": {
     "angular-mocks": "1.2.15",

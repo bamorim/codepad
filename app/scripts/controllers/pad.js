@@ -16,15 +16,17 @@ angular.module('codePadApp')
     };
 
     $scope.updatePad = function(){
-      //We should add some "loading screen" here
-      $scope.pad.$update();
+      $scope.busyPromise = $scope.pad.$update();
     };
 
     $scope.evaluate = function(block){
       return Evaluator.evaluate(block.type, block.content);
     };
 
-    Pad.get({id: $routeParams.id}, function(pad){
-      $scope.pad = pad;
-    });
+    $scope.getPad = function(){
+      $scope.busyPromise = Pad.get({id: $routeParams.id}, function(pad){
+        $scope.pad = pad;
+      }).$promise;
+    }
+    $scope.getPad();
   });

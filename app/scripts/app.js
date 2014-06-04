@@ -7,7 +7,8 @@ angular
     'ngSanitize',
     'angular-blocks',
     'ui.ace',
-    'angular-medium-editor'
+    'angular-medium-editor',
+    'cgBusy'
   ])
   .config(function ($routeProvider,$httpProvider) {
     $httpProvider.defaults.useXDomain = true; 
