@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('codePadApp')
-  .factory('Pad', function ($resource) {
+  .factory('Pad', function (API_ENDPOINT, $resource) {
     return $resource(
-      '//192.168.0.7:9000/pads/:id.json',
+      API_ENDPOINT + '/pads/:id.json',
       {id: "@id"},
       {update: {method: "PUT"}}
     );

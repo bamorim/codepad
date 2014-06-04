@@ -23,4 +23,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('API_ENDPOINT', '//codepad-ufrj-2014-1.herokuapp.com')

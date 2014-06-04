@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('codePadApp')
-  .controller('PadCtrl', function ($scope, $routeParams, $q, Pad) {
+  .controller('PadCtrl', function ($scope, $routeParams, Pad, Evaluator) {
     $scope.supportedLanguages = ["javascript","ruby","python","clojure"]
 
     $scope.removeBlock = function(index){
@@ -21,11 +21,7 @@ angular.module('codePadApp')
     };
 
     $scope.evaluate = function(block){
-      var deferred = $q.defer();
-
-      deferred.resolve(eval(block.content));
-
-      return deferred.promise;
+      return Evaluator.evaluate(block.type, block.content);
     };
 
     Pad.get({id: $routeParams.id}, function(pad){

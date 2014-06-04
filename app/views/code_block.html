@@ -1,0 +1,14 @@
+<div>
+  <div ui-ace="{onLoad: aceLoaded}" ng-model="block.content" ></div>
+
+  <div class="form-inline block-controls">
+    <select class="form-control" ng-model="block.type" ng-options="lang for lang in supportedLanguages"></select>
+    <button class="btn" ng-click="evaluate()"><i class="fa fa-play"></i></button>
+  </div>
+
+  <div ng-show="!evaluation.error && (evaluation)" class="well well-sm">
+    <div ng-bind-html="evaluation.output | newlines"></div>
+    <div>=&gt; {{evaluation.returned}}</div>
+  </div>
+  <div class="label label-danger" ng-show="evaluation.error">{{evaluation.error.message}}</div>
+</div>

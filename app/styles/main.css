@@ -77,3 +77,24 @@ body {
     border-bottom: 0;
   }
 }
+.removeBlock {
+  position: absolute;
+  right: -11px;
+  top: -11px;
+  font-size: 22px;
+  z-index: 100;
+  cursor: pointer;
+}
+.block {
+  padding: 5px;
+  position: relative;
+}
+.block-controls {
+  padding: 5px 0;
+}
+.ta-editor {
+  min-height: 50px;
+  height: auto;
+  overflow: auto;
+}
+}

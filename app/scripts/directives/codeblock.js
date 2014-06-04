@@ -3,12 +3,7 @@
 angular.module('codePadApp')
   .directive('codeBlock', function () {
     return {
-      template: '<div>'+
-        '<div ui-ace="{onLoad: aceLoaded}" ng-model="block.content" ></div>'+
-        '<button ng-click="evaluate()">Evaluate</button>'+
-        '<div>{{evaluation}}</div>'+
-        '<select ng-model="block.type" ng-options="lang for lang in supportedLanguages"></select>'+
-        '</div>',
+      templateUrl: 'views/code_block.html',
       restrict: 'E',
       scope: {
         block: '=',
@@ -28,6 +23,7 @@ angular.module('codePadApp')
           editor.setAutoScrollEditorIntoView(true);
           editor.setOption("minLines", 2);
           editor.setOption("maxLines", 30);
+          editor.setOption("fontSize", 16);
         };
       }
     };
