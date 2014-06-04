@@ -2,17 +2,26 @@
   <div data-block="content">
 
     <h2>{{pad.title}}</h2>
+    <div class="panel">
+      <div class="panel-body">
+        <div ng-repeat="block in pad.blocks">
+          <button ng-click="removeBlock($index)">X</button>
+          <div ng-switch="block.type">
+            <div text-angular ng-switch-when="text" ta-toolbar="[['bold', 'italics', 'underline'],['justifyLeft', 'justifyCenter','justifyRight'],['insertImage','insertLink', 'insertVideo']]" ng-model="block.content"></div>
+            <code-block ng-switch-default block="block" on-evaluate="evaluate" supported-languages="supportedLanguages"></code-block>
+          </div>
+        </div>
+        
+        <div class="btn-group">
+          <button class="btn btn-default" ng-click="addBlock(lang)" ng-repeat="lang in supportedLanguages">+ {{lang}}</button>
+          <button class="btn btn-default" ng-click="addBlock('text')">+ texto</button>
+        </div>
+      </div>
 
-    <div ng-repeat="block in pad.blocks">
-      <button ng-click="removeBlock($index)">X</button>
-      <div ng-switch="block.type">
-        <div text-angular ng-switch-when="text" ta-toolbar="[['bold', 'italics', 'underline'],['justifyLeft', 'justifyCenter','justifyRight'],['insertImage','insertLink', 'insertVideo']]" ng-model="block.content"></div>
-        <code-block ng-switch-default block="block" on-evaluate="evaluate" supported-languages="supportedLanguages"></code-block>
+      <div class="panel-footer text-right">
+        <button class="btn btn-primary" ng-click="updatePad()">Save</button>
       </div>
     </div>
 
-    <select ng-model="newBlockType" ng-options="lang for lang in supportedLanguages.concat(['text'])"></select> 
-    <button ng-click="addBlock(newBlockType)">Adicionar Bloco</button>
-    <button ng-click="pad.$save()">Save</button>
   </div>
 </div>

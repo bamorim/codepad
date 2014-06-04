@@ -9,7 +9,8 @@ angular
     'ui.ace',
     'textAngular'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$httpProvider) {
+    $httpProvider.defaults.useXDomain = true; 
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
