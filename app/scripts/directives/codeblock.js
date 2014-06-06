@@ -16,6 +16,7 @@ angular.module('codePadApp')
           promise.then(function(val){
             scope.evaluation = val;
           });
+          scope.busyPromise = promise;
         }
 
         scope.aceLoaded = function(editor){

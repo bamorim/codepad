@@ -1,4 +1,5 @@
-<div>
+<div style="position: relative">
+  <div cg-busy="{promise:busyPromise,message:'Carregando',backdrop:true}"></div>
   <div ui-ace="{onLoad: aceLoaded}" ng-model="block.content" ></div>
 
   <div class="form-inline block-controls">

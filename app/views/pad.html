@@ -1,6 +1,6 @@
 <div data-extend-template="/layouts/main.html">
   <div data-block="content">
-    <div cg-busy="busyPromise"></div>
+    <div cg-busy="{promise:busyPromise,message:'Carregando',backdrop:true}"></div>
 
     <h2>{{pad.title}}</h2>
     <div class="panel">

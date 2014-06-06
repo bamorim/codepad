@@ -97,4 +97,6 @@ body {
   height: auto;
   overflow: auto;
 }
+.cg-busy {
+  z-index: 10;
 }

@@ -1,10 +1,18 @@
 <div data-extend-template="/layouts/main.html">
   <div data-block="content">
-    <p ng-repeat="pad in pads">
-    <a ng-href="#/pads/{{pad.id}}">{{pad.title}}</a>
-    </p>
+    <div cg-busy="{promise:busyPromise,message:'Carregando',backdrop:true}"></div>
+    <ul class="nav nav-pills nav-stacked">
+      <li ng-repeat="pad in pads" ng-mouseenter="pad.showRemove = true" ng-mouseleave="pad.showRemove = false">
+        <a ng-href="#/pads/{{pad.id}}">
+          <span ng-click="removePad(pad); $event.preventDefault();" ng-show="pad.showRemove" class="btn btn-xs btn-danger pull-right">X</span>
+          {{pad.title}}
+        </a>
+      </li>
+    </ul>
 
-    <input ng-model="newPadTitle" type="text"/>
-    <button ng-click="createPad(newPadTitle)">Criar Novo</button>
+    <form ng-submit="createPad()">
+      <input ng-model="newPadTitle" type="text"/>
+      <button>Criar Novo</button>
+    </form>
   </div>
 </div>
