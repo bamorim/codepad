@@ -89,7 +89,7 @@ body {
   padding: 5px;
   position: relative;
 }
-.block-controls {
+.block-controls, .create-pad {
   padding: 5px 0;
 }
 .ta-editor {

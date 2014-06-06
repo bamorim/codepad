@@ -10,9 +10,11 @@
       </li>
     </ul>
 
-    <form ng-submit="createPad()">
-      <input ng-model="newPadTitle" type="text"/>
-      <button>Criar Novo</button>
+    <form class="form-inline create-pad" ng-submit="createPad()">
+      <div class="form-group">
+        <input class="form-control" ng-model="newPadTitle" type="text"/>
+      </div>
+      <button class="btn btn-primary">Criar Novo</button>
     </form>
   </div>
 </div>
